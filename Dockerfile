@@ -14,7 +14,15 @@ RUN cd /usr/share && \
 RUN gem install bundler dashing
 
 RUN cd /dashing && \
-    bundle install
+    bundle install &&\
+    ln -s /dashing/dashboards /dashboards && \
+    ln -s /dashing/jobs /jobs && \
+    ln -s /dashing/public /public && \
+    ln -s /dashing/widgets /widgets && \
+    mkdir /dashing/config && \
+    mv /dashing/config.ru /dashing/config/config.ru && \
+    ln -s /dashing/config/config.ru /dashing/config.ru && \
+    ln -s /dashing/config /config
 
 VOLUME ["/dashboards", "/jobs", "/lib-dashing", "/config", "/public", "/widgets", "/assets"]
 
