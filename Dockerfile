@@ -19,7 +19,6 @@ RUN cd /dashing && \
     ln -s /dashing/jobs /jobs && \
     ln -s /dashing/public /public && \
     ln -s /dashing/widgets /widgets && \
-    mkdir /dashing/config && \
     mv /dashing/config.ru /dashing/config/config.ru && \
     ln -s /dashing/config/config.ru /dashing/config.ru && \
     ln -s /dashing/config /config
